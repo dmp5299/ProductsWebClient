@@ -1,0 +1,22 @@
+
+    <div *ngIf="productTypes">
+        <table class="table table-striped table-hover table-bordered">  
+            <caption>Vehicle Types</caption>
+            <thead>  
+                <tr>    
+                    <th>Vehicle Type</th>  
+                    <th>Description</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+                <tr *ngFor="let productType of productTypes" (click)="rowClick(productType)">
+                    <td class="col-3">{{productType.Name}}</td>
+                    <td class="col-9">{{productType.Description}}</td>
+                </tr>
+            </tbody>  
+        </table>  
+    </div>
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
